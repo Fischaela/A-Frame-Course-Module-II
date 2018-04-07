@@ -5,10 +5,10 @@
     <title>VR Photo Gallery</title>
     <meta name="description" content="VR Photo Gallery made with A-Frame">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="components/photo_gallery_button.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-sky color="#ECECEC"></a-sky>
+    <a-scene cursor="rayOrigin: mouse">
       <a-assets>
         <img id="beach" src="assets/beach.jpg">
         <img id="boat" src="assets/boat.jpg">
@@ -18,6 +18,13 @@
         <img id="btn-mountain" src="assets/btn-mountain.png">
       </a-assets>
       <a-sky id="panorama" src="#beach"></a-sky>
+      <a-camera look-controls position="0 1.6 0">
+        <a-entity position="0 0 -3">
+          <a-image photo-gallery-button data-image="beach" src="#btn-beach" position="-1.125 0 0"></a-image>
+          <a-image photo-gallery-button data-image="boat" src="#btn-boat"></a-image>
+          <a-image photo-gallery-button data-image="mountain" src="#btn-mountain" position="1.125 0 0"></a-image>
+        </a-entity>
+      </a-camera>
     </a-scene>
   </body>
 </html>
