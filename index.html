@@ -17,15 +17,17 @@
         <img id="btn-beach" src="assets/btn-beach.png">
         <img id="btn-boat" src="assets/btn-boat.png">
         <img id="btn-mountain" src="assets/btn-mountain.png">
+        <audio id="click" src="assets/click.ogg"></audio>
         <a-mixin id="animation-scale-up" animation="property: scale; startEvents: mouseenter; from: 1 1 1; to: 1.2 1.2 1.2; dur: 150;"></a-mixin>
         <a-mixin id="animation-scale-down" animation__2="property: scale; startEvents: mouseleave; from: 1.2 1.2 1.2; to: 1 1 1; dur: 150;"></a-mixin>
+        <a-mixin id="sound-click" sound="on: click; src: #click"></a-mixin>
       </a-assets>
       <a-sky id="panorama" src="#beach"></a-sky>
       <a-camera look-controls position="0 1.6 0">
         <a-entity position="0 0 -3">
-          <a-image photo-gallery-button data-image="beach" src="#btn-beach" position="-1.125 0 0" rotation="0 0 0" mixin="animation-scale-up animation-scale-down"></a-image>
-          <a-image photo-gallery-button data-image="boat" src="#btn-boat" rotation="0 0 0" mixin="animation-scale-up animation-scale-down"></a-image>
-          <a-image photo-gallery-button data-image="mountain" src="#btn-mountain" position="1.125 0 0" rotation="0 0 0" mixin="animation-scale-up animation-scale-down"></a-image>
+          <a-image photo-gallery-button data-image="beach" src="#btn-beach" position="-1.125 0 0" rotation="0 0 0" mixin="animation-scale-up animation-scale-down sound-click"></a-image>
+          <a-image photo-gallery-button data-image="boat" src="#btn-boat" rotation="0 0 0" mixin="animation-scale-up animation-scale-down sound-click"></a-image>
+          <a-image photo-gallery-button data-image="mountain" src="#btn-mountain" position="1.125 0 0" rotation="0 0 0" mixin="animation-scale-up animation-scale-down sound-click"></a-image>
         </a-entity>
       </a-camera>
     </a-scene>
